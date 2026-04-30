@@ -1642,7 +1642,7 @@ class CompareApi {
 			) {
 				//Extension is already installed on target database but extension version mismatch, then generate script to update extension
 				actionLabel = "UPDATE";
-				sqlScript.push(sql.generateUpdateExtensionScript(sourceExtension, sourceExtension[sourceExtension].version));
+				sqlScript.push(sql.generateUpdateExtensionScript(sourceExtension, sourceExtensions[sourceExtension].version));
 			}
 
 			finalizedScript.push(...this.finalizeScript(`${actionLabel} EXTENSION "${sourceExtension}"`, sqlScript));
